@@ -6,7 +6,7 @@ while diff >= tol && k < kmax
     deltax=-B0\fun(x0);                                  %passo 1
     x1=x0+deltax;                                        %passo 2
     deltaf=fun(x1)-fun(x0);                              %passo 3
-    B0=B0+(deltaf-B0.*deltax')/( deltax'* deltax );      %passo 4
+    B0=B0+((deltaf-B0*deltax)*deltax')/( deltax'* deltax );      %passo 4
     x0=x1;                                               %passo 5
     diff = norm(deltax);
 end
